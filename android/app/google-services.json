@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "95956413617",
+    "project_id": "homerental-6e426",
+    "storage_bucket": "homerental-6e426.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:95956413617:android:21d1f2f50e7d6266ff0690",
+        "android_client_info": {
+          "package_name": "com.erhacorpdotcom.homerental"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "95956413617-4i4a0q0d0s2jclstqs5t8s72jghk79g1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.erhacorpdotcom.homerental",
+            "certificate_hash": "5732637386c75587cc0f4846e9bb279c7f40ec6e"
+          }
+        },
+        {
+          "client_id": "95956413617-7gv4817ldtkm4cicerf26pce9gk2j6vg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.erhacorpdotcom.homerental",
+            "certificate_hash": "275fc50753e0a98c6dae5079a2f5c4e872296f72"
+          }
+        },
+        {
+          "client_id": "95956413617-ed1te9g6iqpq1r2fpnfjnel0ed4uhnsd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBunZO9QCq7vw5QIGKLZBq0KLj4WGnBCnw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "95956413617-ed1te9g6iqpq1r2fpnfjnel0ed4uhnsd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
