@@ -4,6 +4,7 @@ import 'package:homerental/theme.dart';
 
 class MyPref {
   static MyPref get to => Get.find<MyPref>();
+
   static GetStorage _box() {
     return GetStorage(myStorageName);
   }
@@ -27,6 +28,7 @@ class MyPref {
 
   final pHome = ReadWriteValue('p_home', '', _box);
   final pSetting = ReadWriteValue('p_setting', '', _box);
+
   //member & install
 
   //location
@@ -34,5 +36,5 @@ class MyPref {
   final pLocation = ReadWriteValue('p_location', '', _box);
   final pCountry = ReadWriteValue('p_country', '', _box);
   final pAddress = ReadWriteValue('p_address', '', _box);
-  //location
+//location
 }

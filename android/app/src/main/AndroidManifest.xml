@@ -47,7 +47,7 @@
         <receiver android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver" android:exported="false" tools:node="merge"/>
 
         <meta-data android:name="com.google.android.geo.API_KEY"
-               android:value="<replace with your API Google Map Key>"/>
+               android:value="AIzaSyD_vaIfhg6l2sRgaK2vUZgkkY9-_Y-_ZkY"/>
 
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_channel_id"
@@ -99,7 +99,7 @@
             android:value="2" />
 
          <service
-            android:name="com.dexterous.flutterlocalnotifications.ForegroundService"        
+            android:name="com.dexterous.flutterlocalnotifications.ForegroundService"
             android:exported="false"
             tools:node="merge"
             android:stopWithTask="false"/>

@@ -30,6 +30,7 @@ enum AppState { loading, done, error }
 
 class ItemResponse {
   ItemResponse({this.result, this.categories, this.appState = AppState.done});
+
   dynamic result;
   List<CategoryModel>? categories;
   List<RentalModel>? recommend;
@@ -48,6 +49,7 @@ enum ChatState { loading, done }
 
 class ItemChatUser {
   ItemChatUser();
+
   User? user;
   UserChat? peer;
   String? groupChatId;
@@ -55,6 +57,7 @@ class ItemChatUser {
 
 class UserLogin {
   UserLogin();
+
   UserChat? userChat;
   List<UserChat>? userChats = [];
   List<ExtMessage>? userMessages = [];
@@ -70,6 +73,7 @@ class XController extends GetxController {
   static XController get to => Get.find<XController>();
 
   final AllProvider _provider = AllProvider();
+
   AllProvider get provider => _provider;
 
   final myPref = Get.find<MyPref>();
@@ -101,6 +105,7 @@ class XController extends GetxController {
   }
 
   final indexBar = 0.obs;
+
   setIndexBar(final int index) {
     if (index == 3) {
       getUserById();
@@ -111,6 +116,7 @@ class XController extends GetxController {
   }
 
   final itemHome = ItemResponse().obs;
+
   asyncHome() async {
     //load local Database key value pair
     loadLocalPrefHome();
@@ -334,6 +340,7 @@ class XController extends GetxController {
 
   //other utilities
   final itemReview = ItemResponse().obs;
+
   getRentReviewById(final String ir, final String iu) {
     try {
       itemReview.update((val) {
@@ -423,6 +430,7 @@ class XController extends GetxController {
 
   final isProcessPass = false.obs;
   final itemPass = ItemResponse().obs;
+
   getRentByCategory(final String ic) {
     try {
       itemPass.update((val) {
@@ -471,6 +479,7 @@ class XController extends GetxController {
   }
 
   final itemPassReview = ItemResponse().obs;
+
   getReviewByRent(final RentalModel rental, final String idReview) {
     try {
       itemPassReview.update((val) {
@@ -595,6 +604,7 @@ class XController extends GetxController {
   //member
   final member = <String, dynamic>{}.obs;
   final loggedIn = false.obs;
+
   updateLogin() {
     loggedIn.value = isLogin();
     update();
@@ -622,8 +632,10 @@ class XController extends GetxController {
   }
 
   final thisUser = UserModel().obs;
+
   //photo this user util
   final photoUser = "".obs;
+
   updatePhotoUser() {
     String photoUrl = '';
     if (thisUser.value.image != null && thisUser.value.image != '') {
@@ -632,6 +644,7 @@ class XController extends GetxController {
     photoUser.value = photoUrl;
     update();
   }
+
   //photo this user util
 
   _setUserLogin() {
@@ -796,15 +809,20 @@ class XController extends GetxController {
   }
 
   String? _latitude;
+
   String get latitude => _latitude ?? "";
+
   setLatitude(String lat) => _latitude = lat;
 
   String? _location;
+
   String get location => _location ?? "";
+
   setLocation(String loc) => _location = loc;
 
   final install = <String, dynamic>{}.obs;
   bool isProcessAsync = false;
+
   asyncUuidToken() async {
     logPrint("asyncUuidToken is runnning $isProcessAsync");
     if (isProcessAsync) return;
@@ -869,6 +887,7 @@ class XController extends GetxController {
 
   //add-on utilities
   final allLiked = <RentalModel>[].obs;
+
   List<RentalModel> getLikedByUserId(final String idUser) {
     return allLiked.where((element) => element.user!.id == idUser).toList();
   }
@@ -933,9 +952,11 @@ class XController extends GetxController {
   }
 
   final ChatController _chatController = ChatController.instance;
+
   ChatController get chatController => _chatController;
 
   User? _thisUserFirebase;
+
   User get thisUserFirebase => _thisUserFirebase!;
 
   final textToSend = "".obs;
@@ -960,6 +981,7 @@ class XController extends GetxController {
   //startChatWith(String uid, String peerId) {}
 
   final userLogin = UserLogin().obs;
+
   getUserChatById(String id) {
     //logPrint("getUserChatById ID: $id");
 
@@ -1014,6 +1036,7 @@ class XController extends GetxController {
   }
 
   bool onProcessAsyncChat = false;
+
   asyncUserChat() async {
     if (onProcessAsyncChat) return;
 
@@ -1065,5 +1088,5 @@ class XController extends GetxController {
 
     _provider.pushResponse('user/push_fcm', jsonEncode(dataPush));
   }
-  //chat utility
+//chat utility
 }
