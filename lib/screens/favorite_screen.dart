@@ -86,6 +86,7 @@ class FavoriteScreen extends StatelessWidget {
   }
 
   final TextEditingController _query = TextEditingController();
+
   Widget inputSearch() {
     final List<RentalModel> latests = x.itemHome.value.latests!;
     _query.text = '';
