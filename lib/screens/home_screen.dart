@@ -293,7 +293,7 @@ class HomeScreen extends StatelessWidget {
                                   Text(
                                     "${e.address}",
                                     style: const TextStyle(
-                                        fontSize: 12, color: Colors.black45),
+                                        fontSize: 10, color: Colors.black45),
                                   ),
                                 ],
                               ),
@@ -321,7 +321,7 @@ class HomeScreen extends StatelessWidget {
                           child: InfoSquare(
                             rental: e,
                             iconSize: 12,
-                            spaceWidth: 5,
+                            spaceWidth: 2,
                           ),
                         ),
                         if (e.distance != null)
