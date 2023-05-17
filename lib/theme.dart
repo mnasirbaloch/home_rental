@@ -15,7 +15,7 @@ import 'package:url_launcher/url_launcher.dart';
 class MyTheme {
   static const iSDEBUG = kDebugMode;
   static const String appName = "HomeRental";
-  static const String appVersion = "v. 1.0.5";
+  static const String appVersion = "v. 1.0.0";
 
   static String fcmTopicName = "homerentaltopic";
   static String serverKeyFCM =
@@ -47,7 +47,7 @@ class MyTheme {
 
   // ----------------- preference box box -------------
 
-  static String noWA = "+6281293812628";
+  static String noWA = "+923460686467";
 
   // file uploaded reference
   static String image1 = "Image";

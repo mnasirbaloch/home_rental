@@ -26,6 +26,7 @@ import 'package:intl/intl.dart';
 
 class MyHome extends StatelessWidget {
   final XController x = XController.to;
+
   MyHome({Key? key}) : super(key: key);
 
   @override
@@ -139,6 +140,7 @@ class MyHome extends StatelessWidget {
 
   final _channel =
       const MethodChannel('com.erhacorpdotcom.homerental/app_retain');
+
   Future<bool> onBackPress() {
     debugPrint("onBackPress MyHome...");
     if (GetPlatform.isAndroid) {
@@ -184,6 +186,7 @@ class MyHome extends StatelessWidget {
   //static dialog re-usabled
   static final TextEditingController _noteReview = TextEditingController();
   static final ratingReview = 2.5.obs;
+
   static showDialogInputReview(
       final XController x, final RentalModel rental, final UserModel user) {
     _noteReview.text = '';
@@ -838,5 +841,5 @@ class MyHome extends StatelessWidget {
       ),
     );
   }
-  //static dialog re-usabled
+//static dialog re-usabled
 }

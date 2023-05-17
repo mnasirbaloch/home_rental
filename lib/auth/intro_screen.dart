@@ -11,12 +11,14 @@ import 'package:homerental/widgets/button_container.dart';
 
 class IntroScreen extends StatelessWidget {
   final XController x = XController.to;
+
   IntroScreen({Key? key}) : super(key: key) {
     Future.delayed(const Duration(milliseconds: 2200), () {
       x.asyncLatitude();
       //x.asyncUuidToken();
     });
   }
+
   final PageController controller = PageController(initialPage: 0);
 
   final titles = [
@@ -140,98 +142,98 @@ class IntroScreen extends StatelessWidget {
                     ),
                   ),
                   spaceHeight5,
-                  Container(
-                    alignment: Alignment.center,
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          margin: const EdgeInsets.only(right: 10),
-                          color: Colors.black38,
-                          width: Get.width / 3.3,
-                          height: 0.5,
-                        ),
-                        const Text("Or", style: TextStyle(color: colorGrey)),
-                        Container(
-                          margin: const EdgeInsets.only(left: 10),
-                          color: Colors.black38,
-                          width: Get.width / 3.3,
-                          height: 0.5,
-                        ),
-                      ],
-                    ),
-                  ),
-                  spaceHeight10,
-                  Container(
-                    alignment: Alignment.center,
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        InkWell(
-                          onTap: () {
-                            EasyLoading.showToast("Dummy action...");
-                          },
-                          child: Container(
-                            width: 40,
-                            height: 40,
-                            margin: const EdgeInsets.only(right: 20),
-                            padding: const EdgeInsets.all(5),
-                            decoration: BoxDecoration(
-                              color: Colors.blue[900],
-                              borderRadius: BorderRadius.circular(60),
-                            ),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(60),
-                              child: const Icon(FontAwesome.facebook_f,
-                                  size: 18, color: Colors.white),
-                            ),
-                          ),
-                        ),
-                        InkWell(
-                          onTap: () {
-                            EasyLoading.showToast("Dummy action...");
-                          },
-                          child: Container(
-                            width: 40,
-                            height: 40,
-                            padding: const EdgeInsets.all(5),
-                            margin: const EdgeInsets.only(right: 20),
-                            decoration: BoxDecoration(
-                              color: Colors.red,
-                              borderRadius: BorderRadius.circular(60),
-                            ),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(60),
-                              child: const Icon(FontAwesome.google_plus,
-                                  size: 15, color: Colors.white),
-                            ),
-                          ),
-                        ),
-                        InkWell(
-                          onTap: () {
-                            EasyLoading.showToast("Dummy action...");
-                          },
-                          child: Container(
-                            width: 40,
-                            height: 40,
-                            padding: const EdgeInsets.all(5),
-                            margin: const EdgeInsets.only(right: 0),
-                            decoration: BoxDecoration(
-                              color: Colors.black,
-                              borderRadius: BorderRadius.circular(60),
-                            ),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(60),
-                              child: const Icon(FontAwesome.apple,
-                                  size: 18, color: Colors.white),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                  // Container(
+                  //   alignment: Alignment.center,
+                  //   child: Row(
+                  //     crossAxisAlignment: CrossAxisAlignment.center,
+                  //     mainAxisAlignment: MainAxisAlignment.center,
+                  //     children: [
+                  //       Container(
+                  //         margin: const EdgeInsets.only(right: 10),
+                  //         color: Colors.black38,
+                  //         width: Get.width / 3.3,
+                  //         height: 0.5,
+                  //       ),
+                  //       const Text("Or", style: TextStyle(color: colorGrey)),
+                  //       Container(
+                  //         margin: const EdgeInsets.only(left: 10),
+                  //         color: Colors.black38,
+                  //         width: Get.width / 3.3,
+                  //         height: 0.5,
+                  //       ),
+                  //     ],
+                  //   ),
+                  // ),
+                  // spaceHeight10,
+                  // Container(
+                  //   alignment: Alignment.center,
+                  //   child: Row(
+                  //     crossAxisAlignment: CrossAxisAlignment.center,
+                  //     mainAxisAlignment: MainAxisAlignment.center,
+                  //     children: [
+                  //       InkWell(
+                  //         onTap: () {
+                  //           EasyLoading.showToast("Dummy action...");
+                  //         },
+                  //         child: Container(
+                  //           width: 40,
+                  //           height: 40,
+                  //           margin: const EdgeInsets.only(right: 20),
+                  //           padding: const EdgeInsets.all(5),
+                  //           decoration: BoxDecoration(
+                  //             color: Colors.blue[900],
+                  //             borderRadius: BorderRadius.circular(60),
+                  //           ),
+                  //           child: ClipRRect(
+                  //             borderRadius: BorderRadius.circular(60),
+                  //             child: const Icon(FontAwesome.facebook_f,
+                  //                 size: 18, color: Colors.white),
+                  //           ),
+                  //         ),
+                  //       ),
+                  //       InkWell(
+                  //         onTap: () {
+                  //           EasyLoading.showToast("Dummy action...");
+                  //         },
+                  //         child: Container(
+                  //           width: 40,
+                  //           height: 40,
+                  //           padding: const EdgeInsets.all(5),
+                  //           margin: const EdgeInsets.only(right: 20),
+                  //           decoration: BoxDecoration(
+                  //             color: Colors.red,
+                  //             borderRadius: BorderRadius.circular(60),
+                  //           ),
+                  //           child: ClipRRect(
+                  //             borderRadius: BorderRadius.circular(60),
+                  //             child: const Icon(FontAwesome.google_plus,
+                  //                 size: 15, color: Colors.white),
+                  //           ),
+                  //         ),
+                  //       ),
+                  //       InkWell(
+                  //         onTap: () {
+                  //           EasyLoading.showToast("Dummy action...");
+                  //         },
+                  //         child: Container(
+                  //           width: 40,
+                  //           height: 40,
+                  //           padding: const EdgeInsets.all(5),
+                  //           margin: const EdgeInsets.only(right: 0),
+                  //           decoration: BoxDecoration(
+                  //             color: Colors.black,
+                  //             borderRadius: BorderRadius.circular(60),
+                  //           ),
+                  //           child: ClipRRect(
+                  //             borderRadius: BorderRadius.circular(60),
+                  //             child: const Icon(FontAwesome.apple,
+                  //                 size: 18, color: Colors.white),
+                  //           ),
+                  //         ),
+                  //       ),
+                  //     ],
+                  //   ),
+                  // ),
                   spaceHeight50,
                 ],
               ),
@@ -243,6 +245,7 @@ class IntroScreen extends StatelessWidget {
   }
 
   final indexSelected = 0.obs;
+
   Widget pageController() {
     return SizedBox(
       width: Get.width,

@@ -275,6 +275,7 @@ class ProfileScreen extends StatelessWidget {
   // option change photo
   final picker = ImagePicker();
   final pathImage = ''.obs;
+
   pickImageSource(int tipe) {
     Future<XFile?> file;
 
@@ -294,6 +295,7 @@ class ProfileScreen extends StatelessWidget {
 
   final GlobalKey<ExtendedImageEditorState> editorKey =
       GlobalKey<ExtendedImageEditorState>();
+
   Future _cropImage(final XController x, final File imageFile) async {
     Get.dialog(
       Container(
@@ -729,6 +731,7 @@ class ProfileScreen extends StatelessWidget {
 
   //change fullname
   final TextEditingController _fullname = TextEditingController();
+
   showDialogOptionChangeFullname(
       final XController x, final UserModel thisUser) {
     _fullname.text = '${thisUser.fullname}';
@@ -947,6 +950,7 @@ class ProfileScreen extends StatelessWidget {
   final TextEditingController _oldPass = TextEditingController();
   final TextEditingController _newPass = TextEditingController();
   final TextEditingController _newRePass = TextEditingController();
+
   showDialogOptionChangePassword(
       final XController x, final UserModel thisUser) {
     _oldPass.text = '';
