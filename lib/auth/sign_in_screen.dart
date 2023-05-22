@@ -25,6 +25,7 @@ class SignInScreen extends StatelessWidget {
   }
 
   final XController x = XController.to;
+
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -134,12 +135,16 @@ class SignInScreen extends StatelessWidget {
                             String em = textEmail.value;
                             String ps = textPassword.value;
 
-                            if (em.trim().length < 3 || !GetUtils.isEmail(em)) {
+                            if (em
+                                .trim()
+                                .length < 3 || !GetUtils.isEmail(em)) {
                               MyTheme.showSnackbar("Email invalid!");
                               return;
                             }
 
-                            if (ps.trim().length < 6) {
+                            if (ps
+                                .trim()
+                                .length < 6) {
                               MyTheme.showSnackbar("Password invalid!");
                               return;
                             }
@@ -183,9 +188,11 @@ class SignInScreen extends StatelessWidget {
                                       ..onTap = () {
                                         // navigate to desired screen
                                         Get.back();
-                                        Future.microtask(() => Get.to(
-                                            SignUpScreen(),
-                                            transition: Transition.upToDown));
+                                        Future.microtask(() =>
+                                            Get.to(
+                                                SignUpScreen(),
+                                                transition: Transition
+                                                    .upToDown));
                                       })
                               ]),
                         ),
@@ -205,6 +212,7 @@ class SignInScreen extends StatelessWidget {
   // email address
   final textEmail = ''.obs;
   final TextEditingController _email = TextEditingController();
+
   Widget inputEmail() {
     debugPrint("rebuild form inputEmail");
     _email.text = textEmail.value;
@@ -256,6 +264,7 @@ class SignInScreen extends StatelessWidget {
   final textPassword = ''.obs;
   final isSecured = true.obs;
   final TextEditingController _password = TextEditingController();
+
   Widget inputPassword() {
     debugPrint("rebuild form inputPassword");
     _password.text = textPassword.value;
@@ -274,33 +283,34 @@ class SignInScreen extends StatelessWidget {
       child: SizedBox(
         width: Get.width,
         child: Obx(
-          () => TextFormField(
-            controller: _password,
-            onChanged: (text) {
-              textPassword.value = text;
-            },
-            obscureText: isSecured.value,
-            style: const TextStyle(fontSize: 15),
-            decoration: InputDecoration(
-              prefixIcon: Icon(
-                FontAwesome.key,
-                size: 18,
-                color: Get.theme.colorScheme.background,
-              ),
-              border: InputBorder.none,
-              hintText: "Password",
-              suffixIcon: InkWell(
-                onTap: () {
-                  isSecured.value = !isSecured.value;
+              () =>
+              TextFormField(
+                controller: _password,
+                onChanged: (text) {
+                  textPassword.value = text;
                 },
-                child: Icon(
-                  isSecured.value ? FontAwesome.eye : FontAwesome.eye_slash,
-                  size: 18,
-                  color: Get.theme.colorScheme.background,
+                obscureText: isSecured.value,
+                style: const TextStyle(fontSize: 15),
+                decoration: InputDecoration(
+                  prefixIcon: Icon(
+                    FontAwesome.key,
+                    size: 18,
+                    color: Get.theme.colorScheme.background,
+                  ),
+                  border: InputBorder.none,
+                  hintText: "Password",
+                  suffixIcon: InkWell(
+                    onTap: () {
+                      isSecured.value = !isSecured.value;
+                    },
+                    child: Icon(
+                      isSecured.value ? FontAwesome.eye : FontAwesome.eye_slash,
+                      size: 18,
+                      color: Get.theme.colorScheme.background,
+                    ),
+                  ),
                 ),
               ),
-            ),
-          ),
         ),
       ),
     );

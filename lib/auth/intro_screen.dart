@@ -93,7 +93,7 @@ class IntroScreen extends StatelessWidget {
                   Container(
                     margin: const EdgeInsets.only(bottom: 0),
                     padding:
-                        const EdgeInsets.symmetric(horizontal: 15, vertical: 0),
+                    const EdgeInsets.symmetric(horizontal: 15, vertical: 0),
                     child: Material(
                       color: Colors.transparent,
                       child: InkWell(
@@ -113,7 +113,7 @@ class IntroScreen extends StatelessWidget {
                   Container(
                     margin: const EdgeInsets.only(bottom: 5),
                     padding:
-                        const EdgeInsets.symmetric(horizontal: 15, vertical: 0),
+                    const EdgeInsets.symmetric(horizontal: 15, vertical: 0),
                     child: Material(
                       color: Colors.transparent,
                       child: InkWell(

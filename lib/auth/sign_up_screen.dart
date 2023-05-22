@@ -24,6 +24,7 @@ class SignUpScreen extends StatelessWidget {
       x.asyncUuidToken();
     });
   }
+
   final XController x = XController.to;
 
   @override
@@ -148,24 +149,32 @@ class SignUpScreen extends StatelessWidget {
                             String pass = textPassword.value;
                             String repass = textRePassword.value;
 
-                            if (nm.trim().length < 4) {
+                            if (nm
+                                .trim()
+                                .length < 4) {
                               MyTheme.showSnackbar(
                                   'Fullname invalid! Min 4 characters');
                               return;
                             }
 
-                            if (em.trim().length < 3 || !GetUtils.isEmail(em)) {
+                            if (em
+                                .trim()
+                                .length < 3 || !GetUtils.isEmail(em)) {
                               MyTheme.showSnackbar("Email invalid!");
                               return;
                             }
 
-                            if (pass.trim().length < 6) {
+                            if (pass
+                                .trim()
+                                .length < 6) {
                               MyTheme.showSnackbar(
                                   "Password invalid!, Min. 6 aplhanumeric!");
                               return;
                             }
 
-                            if (repass.trim().length < 6) {
+                            if (repass
+                                .trim()
+                                .length < 6) {
                               MyTheme.showSnackbar(
                                   "Re-Password invalid!, Min. 6 aplhanumeric!");
                               return;
@@ -185,7 +194,7 @@ class SignUpScreen extends StatelessWidget {
                                 backgroundColor: Get.theme.canvasColor,
                                 type: CoolAlertType.confirm,
                                 text:
-                                    'Do you want to procced this registration with email $em?',
+                                'Do you want to procced this registration with email $em?',
                                 confirmBtnText: 'Yes',
                                 cancelBtnText: 'No',
                                 confirmBtnColor: Colors.green,
@@ -229,9 +238,11 @@ class SignUpScreen extends StatelessWidget {
                                       ..onTap = () {
                                         // navigate to desired screen
                                         Get.back();
-                                        Future.microtask(() => Get.to(
-                                            SignInScreen(),
-                                            transition: Transition.cupertino));
+                                        Future.microtask(() =>
+                                            Get.to(
+                                                SignInScreen(),
+                                                transition: Transition
+                                                    .cupertino));
                                       })
                               ]),
                         ),
@@ -251,6 +262,7 @@ class SignUpScreen extends StatelessWidget {
   // fullname
   final textFullname = ''.obs;
   final TextEditingController _fullname = TextEditingController();
+
   Widget inputFullname() {
     _fullname.text = textFullname.value;
     return Container(
@@ -292,6 +304,7 @@ class SignUpScreen extends StatelessWidget {
   // email address
   final textEmail = ''.obs;
   final TextEditingController _email = TextEditingController();
+
   Widget inputEmail() {
     _email.text = textEmail.value;
     return Container(
@@ -341,6 +354,7 @@ class SignUpScreen extends StatelessWidget {
   final textPassword = ''.obs;
   final isSecured = true.obs;
   final TextEditingController _password = TextEditingController();
+
   Widget inputPassword() {
     _password.text = textPassword.value;
     return Container(
@@ -358,33 +372,34 @@ class SignUpScreen extends StatelessWidget {
       child: SizedBox(
         width: Get.width,
         child: Obx(
-          () => TextFormField(
-            controller: _password,
-            onChanged: (text) {
-              textPassword.value = text;
-            },
-            obscureText: isSecured.value,
-            style: const TextStyle(fontSize: 15),
-            decoration: InputDecoration(
-              prefixIcon: Icon(
-                FontAwesome.key,
-                size: 18,
-                color: Get.theme.colorScheme.background,
-              ),
-              border: InputBorder.none,
-              hintText: "Password",
-              suffixIcon: InkWell(
-                onTap: () {
-                  isSecured.value = !isSecured.value;
+              () =>
+              TextFormField(
+                controller: _password,
+                onChanged: (text) {
+                  textPassword.value = text;
                 },
-                child: Icon(
-                  isSecured.value ? FontAwesome.eye : FontAwesome.eye_slash,
-                  size: 18,
-                  color: Get.theme.colorScheme.background,
+                obscureText: isSecured.value,
+                style: const TextStyle(fontSize: 15),
+                decoration: InputDecoration(
+                  prefixIcon: Icon(
+                    FontAwesome.key,
+                    size: 18,
+                    color: Get.theme.colorScheme.background,
+                  ),
+                  border: InputBorder.none,
+                  hintText: "Password",
+                  suffixIcon: InkWell(
+                    onTap: () {
+                      isSecured.value = !isSecured.value;
+                    },
+                    child: Icon(
+                      isSecured.value ? FontAwesome.eye : FontAwesome.eye_slash,
+                      size: 18,
+                      color: Get.theme.colorScheme.background,
+                    ),
+                  ),
                 ),
               ),
-            ),
-          ),
         ),
       ),
     );
@@ -394,6 +409,7 @@ class SignUpScreen extends StatelessWidget {
   final textRePassword = ''.obs;
   final isSecuredRe = true.obs;
   final TextEditingController _repassword = TextEditingController();
+
   Widget inputRePassword() {
     _repassword.text = textRePassword.value;
     return Container(
@@ -411,33 +427,35 @@ class SignUpScreen extends StatelessWidget {
       child: SizedBox(
         width: Get.width,
         child: Obx(
-          () => TextFormField(
-            controller: _repassword,
-            onChanged: (text) {
-              textRePassword.value = text;
-            },
-            obscureText: isSecuredRe.value,
-            style: const TextStyle(fontSize: 15),
-            decoration: InputDecoration(
-              prefixIcon: Icon(
-                FontAwesome.key,
-                size: 18,
-                color: Get.theme.colorScheme.background,
-              ),
-              border: InputBorder.none,
-              hintText: "Retype Password",
-              suffixIcon: InkWell(
-                onTap: () {
-                  isSecuredRe.value = !isSecuredRe.value;
+              () =>
+              TextFormField(
+                controller: _repassword,
+                onChanged: (text) {
+                  textRePassword.value = text;
                 },
-                child: Icon(
-                  isSecuredRe.value ? FontAwesome.eye : FontAwesome.eye_slash,
-                  size: 18,
-                  color: Get.theme.colorScheme.background,
+                obscureText: isSecuredRe.value,
+                style: const TextStyle(fontSize: 15),
+                decoration: InputDecoration(
+                  prefixIcon: Icon(
+                    FontAwesome.key,
+                    size: 18,
+                    color: Get.theme.colorScheme.background,
+                  ),
+                  border: InputBorder.none,
+                  hintText: "Retype Password",
+                  suffixIcon: InkWell(
+                    onTap: () {
+                      isSecuredRe.value = !isSecuredRe.value;
+                    },
+                    child: Icon(
+                      isSecuredRe.value ? FontAwesome.eye : FontAwesome
+                          .eye_slash,
+                      size: 18,
+                      color: Get.theme.colorScheme.background,
+                    ),
+                  ),
                 ),
               ),
-            ),
-          ),
         ),
       ),
     );
@@ -547,7 +565,7 @@ class SignUpScreen extends StatelessWidget {
       //debugPrint(datapush);
 
       final response =
-          await x.provider.pushResponse('api/register', jsonEncode(datapush));
+      await x.provider.pushResponse('api/register', jsonEncode(datapush));
       //debugPrint(response);
 
       if (response != null && response.statusCode == 200) {
