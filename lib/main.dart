@@ -25,7 +25,6 @@ Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
     try {
       Future.microtask(() async {
         await GetStorage.init(myStorageName);
-
         //Get.put(MyPref());
         Get.lazyPut<MyPref>(() => MyPref());
         Get.lazyPut<XController>(() => XController());
@@ -78,9 +77,7 @@ void main() async {
   });
 }
 
-final fontFamily = GoogleFonts
-    .poppins()
-    .fontFamily;
+final fontFamily = GoogleFonts.poppins().fontFamily;
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -104,7 +101,7 @@ class MyApp extends StatelessWidget {
     final MyPref myPref = MyPref.to;
     String lang = myPref.pLang.val.toLowerCase();
     Locale locale =
-    lang == 'id' ? const Locale('id', 'ID') : const Locale('en', 'US');
+        lang == 'id' ? const Locale('id', 'ID') : const Locale('en', 'US');
 
     return GetMaterialApp(
       translations: MessagesTranslation(),

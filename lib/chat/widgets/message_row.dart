@@ -153,7 +153,7 @@ class _MessageRow extends State<MessageRow> {
           unRead = 0;
         });
 
-        x.gotoChatApp(userChat);
+        x.gotoChatApp(userChat!);
       },
       child: Container(
         margin: const EdgeInsets.only(left: 5, right: 6, bottom: 15),

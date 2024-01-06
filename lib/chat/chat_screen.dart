@@ -330,7 +330,7 @@ class ChatScreen extends StatelessWidget {
           ),
           child: ListTile(
             onTap: () {
-              clickToChat(x, userChat);
+              clickToChat(x, userChat!);
             },
             contentPadding:
                 const EdgeInsets.only(top: 0, left: 15, right: 15, bottom: 0),

@@ -23,6 +23,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print('home screen');
     SizeConfig().init(context);
 
     return Container(
@@ -37,6 +38,7 @@ class HomeScreen extends StatelessWidget {
           return;
         },
         child: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -175,7 +177,7 @@ class HomeScreen extends StatelessWidget {
                     : listLatest(x.itemHome.value.latests!),
               ),
               SizedBox(height: getProportionateScreenHeight(55)),
-              SizedBox(height: getProportionateScreenHeight(155)),
+              SizedBox(height: getProportionateScreenHeight(145)),
             ],
           ),
         ),

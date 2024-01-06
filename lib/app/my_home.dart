@@ -70,7 +70,7 @@ class MyHome extends StatelessWidget {
                   backgroundColor: Get.theme.primaryColor,
                   marginR:
                       const EdgeInsets.symmetric(horizontal: 22, vertical: 0),
-                  paddingR: const EdgeInsets.only(bottom: 8, top: 5),
+                  paddingR: const EdgeInsets.only(bottom: 8, top: 0),
                   margin: const EdgeInsets.only(left: 10, right: 10, bottom: 0),
                   currentIndex: x.indexBar.value,
                   dotIndicatorColor: Get.theme.disabledColor,

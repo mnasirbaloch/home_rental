@@ -1340,41 +1340,41 @@ class DetailRental extends StatelessWidget {
                 "focus": isCvvFocused ? "1" : "0",
               };
             }, // Required
-            themeColor: Colors.red,
+            // themeColor: Colors.red,
             obscureCvv: true,
             obscureNumber: true,
-            cardNumberDecoration: MyTheme.inputFormAccent(
-              'XXXX XXXX XXXX XXXX',
-              Get.theme.canvasColor,
-              Get.theme.primaryColor,
-            ).copyWith(
-              labelText: 'Number',
-              contentPadding: const EdgeInsets.all(5),
-            ),
-            expiryDateDecoration: MyTheme.inputFormAccent(
-              'XX/XX',
-              Get.theme.canvasColor,
-              Get.theme.primaryColor,
-            ).copyWith(
-              labelText: 'Expired Date',
-              contentPadding: const EdgeInsets.all(5),
-            ),
-            cvvCodeDecoration: MyTheme.inputFormAccent(
-              'XXX',
-              Get.theme.canvasColor,
-              Get.theme.primaryColor,
-            ).copyWith(
-              labelText: 'CVV',
-              contentPadding: const EdgeInsets.all(5),
-            ),
-            cardHolderDecoration: MyTheme.inputFormAccent(
-              'Card Holder Name',
-              Get.theme.canvasColor,
-              Get.theme.primaryColor,
-            ).copyWith(
-              labelText: 'Card Holder',
-              contentPadding: const EdgeInsets.all(5),
-            ),
+            // cardNumberDecoration: MyTheme.inputFormAccent(
+            //   'XXXX XXXX XXXX XXXX',
+            //   Get.theme.canvasColor,
+            //   Get.theme.primaryColor,
+            // ).copyWith(
+            //   labelText: 'Number',
+            //   contentPadding: const EdgeInsets.all(5),
+            // ),
+            // expiryDateDecoration: MyTheme.inputFormAccent(
+            //   'XX/XX',
+            //   Get.theme.canvasColor,
+            //   Get.theme.primaryColor,
+            // ).copyWith(
+            //   labelText: 'Expired Date',
+            //   contentPadding: const EdgeInsets.all(5),
+            // ),
+            // cvvCodeDecoration: MyTheme.inputFormAccent(
+            //   'XXX',
+            //   Get.theme.canvasColor,
+            //   Get.theme.primaryColor,
+            // ).copyWith(
+            //   labelText: 'CVV',
+            //   contentPadding: const EdgeInsets.all(5),
+            // ),
+            // cardHolderDecoration: MyTheme.inputFormAccent(
+            //   'Card Holder Name',
+            //   Get.theme.canvasColor,
+            //   Get.theme.primaryColor,
+            // ).copyWith(
+            //   labelText: 'Card Holder',
+            //   contentPadding: const EdgeInsets.all(5),
+            // ),
           ),
         ),
       ],

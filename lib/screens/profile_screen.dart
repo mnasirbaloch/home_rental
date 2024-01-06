@@ -27,7 +27,9 @@ class ProfileScreen extends StatelessWidget {
   final XController x = XController.to;
   final MyPref myPref = MyPref.to;
 
-  ProfileScreen({Key? key}) : super(key: key) {
+  ProfileScreen({
+    Key? key,
+  }) : super(key: key) {
     updateUser.value = x.thisUser.value;
   }
 
@@ -326,7 +328,7 @@ class ProfileScreen extends StatelessWidget {
               child: IconButton(
                 onPressed: () {
                   Get.back();
-                  cropAction(x);
+                  // cropAction(x);
                 },
                 icon: Icon(
                   Feather.check_circle,
@@ -340,23 +342,23 @@ class ProfileScreen extends StatelessWidget {
     );
   }
 
-  cropAction(final XController x) async {
-    final Uint8List fileData = Uint8List.fromList(kIsWeb
-        ? (await cropImageDataWithDartLibrary(state: editorKey.currentState!))!
-        : (await cropImageDataWithNativeLibrary(
-            state: editorKey.currentState!))!);
+  // cropAction(final XController x) async {
+  //   final Uint8List fileData = Uint8List.fromList(kIsWeb
+  //       ? (await cropImageDataWithDartLibrary(state: editorKey.currentState!))!
+  //       : (await cropImageDataWithNativeLibrary(
+  //           state: editorKey.currentState!))!);
 
-    final String title = '${DateTime.now().millisecondsSinceEpoch}.jpg';
-    final String? fileFath =
-        await ImageGallerySaver.saveImage(fileData, name: title);
+  //   final String title = '${DateTime.now().millisecondsSinceEpoch}.jpg';
+  //   final String? fileFath =
+  //       await ImageGallerySaver.saveImage(fileData, name: title);
 
-    File tmpFile = File(fileFath!);
-    String base64Image = base64Encode(tmpFile.readAsBytesSync());
-    String fileName = tmpFile.path.split('/').last;
-    Future.microtask(() {
-      upload(fileName, base64Image);
-    });
-  }
+  //   File tmpFile = File(fileFath!);
+  //   String base64Image = base64Encode(tmpFile.readAsBytesSync());
+  //   String fileName = tmpFile.path.split('/').last;
+  //   Future.microtask(() {
+  //     upload(fileName, base64Image);
+  //   });
+  // }
 
   upload(String fileName, String base64Image) async {
     EasyLoading.show(status: "Loading...");
@@ -492,9 +494,9 @@ class ProfileScreen extends StatelessWidget {
                                 color: Colors.grey[300],
                                 borderRadius: BorderRadius.circular(20),
                               ),
-                              child: Column(
+                              child: const Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
-                                children: const [
+                                children: [
                                   Text(
                                     "Camera",
                                   )
@@ -647,9 +649,9 @@ class ProfileScreen extends StatelessWidget {
                                 color: Colors.grey[300],
                                 borderRadius: BorderRadius.circular(20),
                               ),
-                              child: Column(
+                              child: const Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
-                                children: const [
+                                children: [
                                   Text(
                                     "English",
                                   )
